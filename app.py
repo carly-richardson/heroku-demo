@@ -31,12 +31,5 @@ def goto_code():
 def goto_bios():
     return(request.form)
 
-def load_and_get_stats(body: dict) -> dict:
-    chars = mongo.db.collectionname
-
-    chars.update_one({body}. {'$inc':{'displayed': 1}})
-
-    return chars.find()
-
 if __name__ == "__main__":
     app.run(debug=True)
