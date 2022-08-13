@@ -12,13 +12,13 @@ from sqlalchemy.sql import func
 
 app = Flask(__name__)
 
-app.config['DB_PASSWORD'] = os.environ.get('DB_PASSWORD')
+os.environ.get('DB_PASSWORD')
 
 conn = psycopg2.connect(
         host="movie-project.cc10tszik781.us-east-1.rds.amazonaws.com",
         database="movies",
         user="postgres",
-        password=DB_PASSWORD)
+        password="DB_PASSWORD")
 
 # Open a cursor to perform database operations
 cur = conn.cursor()
